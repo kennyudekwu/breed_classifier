@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Breed Classification🐶</title>
+    <link href="{% static '/frontend/css/style.css' %}" rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Abel&family=Inter:wght@400;800&family=Nova+Mono&display=swap');
+    </style>
+</head>
+
+<body style='overflow-y: auto;'>
+    <div id='main-text'><h1>Know Your Dog Breed!</h1></div>
+    <div class="drag-area">
+      <header>Drag & Drop to Upload File</header>
+      <p id='max-text'>Maximum file size: 50MB</p>
+      <form name="form1" action="#">
+      <input class="file-input" type="file" name="imageFile" hidden>
+      <div class='line'>
+        <button id="import">Import</button>
+        <button id="breed">Get breed</button>
+      </div>
+      <div class='input-area' id="input-area">
+        <div class='folder'><img class="click-folder" src="{% static '/frontend/images/folderemoji.png' %}" id='folder'/></div>
+        <p id='instruction'>Place image file here</p>
+        <section class="progress-area"></section>
+      </div>
+      </form>
+    </div>
+
+    <div id="detect"></div>
+    <div class="cn-bg-effect"></div>
+    <div class="wrapper">
+      <div class="content">
+        <div class="warn-icon">
+          <span class="icon"><img src="{% static '/frontend/images/dogemoji.png' %}"></span>
+        </div>
+        <h2 class="breed-name">Breed name</h2>
+        <p class='desc'>Description.</p>
+        <div class="btn">
+          <div class="bg-layer"></div>
+          <button id="another">Try another</button>
+        </div>
+      </div>
+    </div>
+    <script>
+
+    </script>
+
+    <script src="{% static '/frontend/js/script.js' %}" async></script>
+  </body>
+</html>
