@@ -21,8 +21,11 @@ model_path = os.path.relpath(
 Avoiding "pathing issues" by creating the PosixPath property needed for processing of certain path format
 passed in
 """
-temp = pathlib.PosixPath
-pathlib.PosixPath = pathlib.WindowsPath
+
+if os.name == 'nt':
+    temp = pathlib.PosixPath
+    pathlib.PosixPath = pathlib.WindowsPath
+
 
 path = Path(model_path)
 
