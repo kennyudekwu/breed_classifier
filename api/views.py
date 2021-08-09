@@ -25,6 +25,7 @@ passed in
 if os.name == 'nt':
     temp = pathlib.PosixPath
     pathlib.PosixPath = pathlib.WindowsPath
+    print(os.name)
 
 
 path = Path(model_path)
