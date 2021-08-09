@@ -12,21 +12,23 @@ import os
 from pathlib import Path
 from fastai.vision.all import *
 import pathlib
-dirname = os.path.dirname(__file__)
-print(f'dirname: {dirname}')
-model_path = os.path.relpath(
-    'breed_classifier/models/dog_model.pkl', dirname)
-
-"""
-Avoiding "pathing issues" by creating the PosixPath property needed for processing of certain path format
-passed in
-"""
 
 if os.name == 'nt':
+    dirname = os.path.dirname(__file__)
+    print(f'dirname: {dirname}')
+    model_path = os.path.relpath(
+        'breed_classifier/models/dog_model.pkl', dirname)
+
+    """
+    Avoiding "pathing issues" by creating the PosixPath property needed for processing of certain path format
+    passed in
+    """
+
     temp = pathlib.PosixPath
     pathlib.PosixPath = pathlib.WindowsPath
-    print(os.name)
 
+else:
+    model_path = "..\models\dog_model.pkl'"
 
 path = Path(model_path)
 
