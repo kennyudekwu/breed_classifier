@@ -14,22 +14,18 @@ from fastai.vision.all import *
 import pathlib
 
 
-if os.name == 'nt':
-    dirname = os.path.dirname(__file__)
-    # print(f'dirname: {dirname}') for debugging
-    model_path = os.path.relpath(
-        'breed_classifier/models/dog_model.pkl', dirname)
+dirname = os.path.dirname(__file__)
+# print(f'dirname: {dirname}') for debugging
+model_path = os.path.relpath(
+    'breed_classifier/models/dog_model.pkl', dirname)
 
-    """
+"""
     Avoiding "pathing issues" by creating the PosixPath property needed for processing of certain path format
     passed in
-    """
-
+"""
+if os.name == 'nt':
     temp = pathlib.PosixPath
     pathlib.PosixPath = pathlib.WindowsPath
-
-else:
-    model_path = os.path.join("../models/", "dog_model.pkl")
 
 
 path = Path(model_path)
