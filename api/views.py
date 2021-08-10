@@ -16,7 +16,7 @@ import pathlib
 
 if os.name == 'nt':
     dirname = os.path.dirname(__file__)
-    print(f'dirname: {dirname}')
+    # print(f'dirname: {dirname}') for debugging
     model_path = os.path.relpath(
         'breed_classifier/models/dog_model.pkl', dirname)
 
@@ -35,11 +35,11 @@ else:
 path = Path(model_path)
 
 if path.exists():
-    print(path)
+
     LEARN__INF = load_learner(model_path)
 else:
-    print(path)
-    raise Exception(model_path)
+
+    raise Exception("Model path doesn't exist")
 
 
 @api_view(['POST'])
