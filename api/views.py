@@ -13,6 +13,7 @@ from pathlib import Path
 from fastai.vision.all import *
 import pathlib
 
+
 if os.name == 'nt':
     dirname = os.path.dirname(__file__)
     print(f'dirname: {dirname}')
@@ -28,7 +29,8 @@ if os.name == 'nt':
     pathlib.PosixPath = pathlib.WindowsPath
 
 else:
-    model_path = "..\models\dog_model.pkl'"
+    model_path = os.path.join("../models/", "dog_model.pkl")
+
 
 path = Path(model_path)
 
@@ -37,7 +39,7 @@ if path.exists():
     LEARN__INF = load_learner(model_path)
 else:
     print(path)
-    raise Exception("Model path does not exist")
+    raise Exception(model_path)
 
 
 @api_view(['POST'])
