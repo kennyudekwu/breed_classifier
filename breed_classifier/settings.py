@@ -1,3 +1,4 @@
+import django_heroku
 import os
 from pathlib import Path
 
@@ -135,5 +136,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 #     os.path.join(BASE_DIR, 'static')
 # ]
 path = Path(STATIC_ROOT)
-print(path)
-print(path.exists())
+
+django_heroku.settings(locals())
