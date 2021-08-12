@@ -16,8 +16,7 @@ import pathlib
 
 dirname = os.path.dirname(__file__)
 # print(f'dirname: {dirname}') for debugging
-model_path = os.path.relpath(
-    'breed_classifier/models/dog_model.pkl', dirname)
+model_path = './models/dog_model.pkl'
 
 """
     Avoiding "pathing issues" by creating the PosixPath property needed for processing of certain path format
