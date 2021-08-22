@@ -343,3 +343,24 @@ button:hover {
 .input-area.active{
   border: 2px solid #fff;
 }
+
+@media screen and (max-width:420px) {
+  #main-text h1 {
+    font-size: 2.05rem;
+    line-height: 2rem;
+
+  }
+
+  .drag-area, #main-text {
+    width: 85%;
+}
+
+#import {
+  margin-bottom: 6px;
+}
+
+.input-area {
+  height: 100%;
+}
+
+}
