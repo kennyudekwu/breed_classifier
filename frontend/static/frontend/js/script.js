@@ -206,7 +206,7 @@ function processFile (file) {
       }
       else alert("File is too big");
     }else{
-      alert("This is not an Image File!");
+      alert("This is not an image file! Please attach an image file");
       dropArea.classList.remove("active");
       dragText.textContent = "Drag & Drop to Upload File";
     }

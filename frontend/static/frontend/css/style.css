@@ -363,4 +363,22 @@ button:hover {
   height: 100%;
 }
 
+.warn-icon {
+  width: 90px;
+  height: 0px;
+}
+
+.wrapper {
+  width: 76%;
+  border-radius: 13%;
+}
+
+h2.breed-name {
+  font-size: 30px;
+}
+
+p.desc {
+  font-size: 17px;
+}
+
 }
