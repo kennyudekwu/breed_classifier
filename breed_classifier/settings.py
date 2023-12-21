@@ -1,4 +1,4 @@
-import django_heroku
+# import django_heroku
 import environ
 import os
 from pathlib import Path
@@ -15,12 +15,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = 'secret'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['mydogbreed.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['mydogbreed.herokuapp.com', '127.0.0.1'] # make the IP of the serving machine be dynamically populated using env vars
 CORS_ORIGIN_ALLOW_ALL = True
 
 # Application definition
@@ -135,11 +135,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR, 'static')
 # ]
 path = Path(STATIC_ROOT)
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())

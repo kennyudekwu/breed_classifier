@@ -1,1 +1,0 @@
-web: gunicorn breed_classifier.wsgi --log-file -

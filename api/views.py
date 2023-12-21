@@ -51,7 +51,7 @@ def result(request):
         inference = LEARN__INF.predict(img_path)[0]
         result = {'inference': inference}
         default_storage.delete(img_path)
-        print(result)
+        # print(result)
         return Response(result, status=status.HTTP_200_OK)
 
     except:
