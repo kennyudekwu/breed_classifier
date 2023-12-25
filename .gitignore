@@ -12,5 +12,6 @@ Lib/
 Scripts/
 share/
 .env
+env/
 
 
