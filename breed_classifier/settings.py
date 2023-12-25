@@ -15,12 +15,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'secret'
+SECRET_KEY = env('HOST_SECRET')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['mydogbreed.herokuapp.com', '127.0.0.1'] # make the IP of the serving machine be dynamically populated using env vars
+ALLOWED_HOSTS = ['mydogbreed.herokuapp.com', '127.0.0.1', env('HOST_PUBLIC_IP'), env('SERVER_DOMAIN')] # make the IP of the serving machine be dynamically populated using env vars
 CORS_ORIGIN_ALLOW_ALL = True
 
 # Application definition

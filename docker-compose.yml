@@ -1,11 +1,19 @@
 version: '3'
 
 services:
-  web:
+  webapp:
+    image: kenzojudex/breed_classifier:1.0
     build: .
     command: bash -c "gunicorn --config gunicorn_config.py breed_classifier.wsgi:application"
     container_name: dog_breed_classifier_app
-    volumes:
-      - .:/app
+    environment:
+      HOST_PUBLIC_IP: ${HOST_PUBLIC_IP}
+      HOST_SECRET: ${HOST_SECRET}
+      SERVER_DOMAIN: ${SERVER_DOMAIN}
+    # To bind host filesystem with container's to allow realtime effect of code changes as opposed to having to build
+    # the container again to test out new modification made to the application
+    # this line should not exist in the serving machine - test and prod instances
+    # volumes:
+    # - .:/app
     ports:
       - "8000:8000"
