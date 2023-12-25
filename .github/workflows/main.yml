@@ -31,7 +31,7 @@ jobs:
       with:
         host: ${{ secrets.ORACLE_INSTANCE_HOST }}
         username: ${{ secrets.ORACLE_INSTANCE_USERNAME }}
-        password: ${{ secrets.ORACLE_INSTANCE_PASSWORD }}
+        key: ${{ secrets.ORACLE_INSTANCE_SSH_KEY }}
         script: |
           cd dog_breed_classifier_app
           docker-compose pull
