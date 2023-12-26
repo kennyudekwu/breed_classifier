@@ -3,7 +3,7 @@ version: '3'
 services:
   webapp:
     image: kenzojudex/breed_classifier:1.0
-    platform: linux/arm64/v8 # oracle instance architecture to allow for compatible image build
+    # platform: linux/arm64/v8 # oracle instance architecture to allow for compatible image build
     build: .
     command: bash -c "gunicorn --config gunicorn_config.py breed_classifier.wsgi:application"
     container_name: dog_breed_classifier_app
