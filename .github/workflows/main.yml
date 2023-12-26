@@ -23,8 +23,7 @@ jobs:
 
     - name: Build and Push Docker images
       run: |
-        docker-compose build
-        docker-compose push
+        docker buildx build --platform linux/arm64/v8 --push -t kenzojudex/breed_classifier:1.0 .
 
     - name: Deploy to Oracle Instance
       uses: appleboy/ssh-action@master
